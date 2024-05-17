@@ -5,77 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote</title>
     <style>
+        @font-face {
+            font-family: 'Celestia';
+            src: url('CelestiaMediumRedux-dJdX.ttf') format('truetype');
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: transparent;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
+            font-family: 'Celestia';
+            background-color: blueviolet;
         }
-
         .card {
-            background-color: #333333;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(234, 234, 234, 0.5);
-            padding: 10px;
-            border-spacing: 10px;
-            margin: 10px;
-            max-width: 500px;
+            display: flex;
+            min-height: 128px;
+            width: 256px;
+            font-size: 24px;
         }
-
-        .profile-image-rounder {
-            border-radius: 50%;
-            overflow: hidden;
-            height: 50px !important;
-            width: 50px !important;
+        .pfp {
+            position: absolute;
+            width: 128px;
+            height: 128px;
+            border-radius: 100%;
+            background-color: aqua;
         }
-
-        .profile-image {
-            width: 50px;
-            height: 50px;
-            padding: 10px;
+        .card-holder {
+            width: 100%;
         }
-
-        .profile-image img {
+        .quote-first {
+            padding-left: 128px;
+            background-color: white;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border-radius: 64px 4px 4px 64px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
         }
-
+        .quote-main {
+            padding-left: 128px;
+            background-color: grey;
+            width: calc(100% - 32px);
+            height: 32px;
+        }
+        .quote-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+            justify-content: space-between;
+            height: 100%;
+            box-sizing: border-box;
+        }
         .quote-author {
-            font-size: 14px;
+            margin: 0;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: end;
+            opacity: 0.25;
         }
-
-        .quote-text {
-            font-size: 18px;
+        .quote-space {
+            height: 100%;
+        }
+        .dark  .quote-first {
+            background-color: #212121;
+            color:white
         }
     </style>
 </head>
 <body>
 <div class="card">
-    <table>
-        <tr>
-            <td class="profile-image">
-                <div class="profile-image-rounder">
-                    <img src="{{avatar_file_path}}" alt="Profile Image">
+        <img src="{{avatar_file_path}}" class="pfp">
+        <div class="card-holder">
+            <div class="quote-first">
+                <div class="quote-body">
+                    <div class="quote-text">{{message}}</div>
+                    <div class="quote-space"></div>
+                    <div class="quote-author">от {{author}}</div>
                 </div>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td class="quote-author">{{author}}</td>
-                    </tr>
-                    <tr>
-                        <td class="quote-text">{{message}}</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
 </div>
 </body>
 </html>
