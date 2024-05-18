@@ -1,8 +1,7 @@
 .idea/
-test.png
 vendor/
-.env
-test.html
+docker/.env
+docker/images/app/build/
 
 # Created by https://www.toptal.com/developers/gitignore/api/goland,go,macos,linux,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=goland,go,macos,linux,windows
