@@ -1,6 +1,8 @@
 services:
   selenium-chrome:
     image: selenium/standalone-chrome
+    environment:
+      - SE_NODE_SESSION_TIMEOUT=32000000
     ulimits:
       nofile: 32768
 
