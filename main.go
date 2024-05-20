@@ -36,6 +36,8 @@ func main() {
 
 	seleniumUrl = os.Getenv("SELENIUM") + "/wd/hub"
 
+	time.Sleep(10 * time.Second) // wait until selenium start
+
 	var err error
 	service, err = selenium.NewRemote(selenium.Capabilities{"browserName": "chrome"}, seleniumUrl)
 	if err != nil {
@@ -44,8 +46,6 @@ func main() {
 	}
 	session = service.SessionID()
 	defer service.Quit()
-
-	time.Sleep(10 * time.Second) // wait until selenium start
 
 	t, err := os.ReadFile("./quote.html")
 	if err != nil {
