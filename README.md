@@ -39,3 +39,5 @@ To run the bot, you need to install Docker and follow the instructions below.
 - You can edit `quote.html` to change the design of the sticker
 - You can change `font.ttf` to modify the sticker's text font
 - You can replace `avatar-placeholder.png` to change the user's avatar stub when it cannot be obtained
+
+You can also put your files in the `./override/` folder to avoid modifying files tracked by the version control system.

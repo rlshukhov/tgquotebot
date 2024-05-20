@@ -2,6 +2,7 @@
 vendor/
 docker/.env
 docker/images/app/build/
+override/
 
 # Created by https://www.toptal.com/developers/gitignore/api/goland,go,macos,linux,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=goland,go,macos,linux,windows
