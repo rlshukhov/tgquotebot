@@ -1,6 +1,6 @@
 PACKAGE=tgquotebot
 BUILDER=docker run --rm -v ./:/usr/local/go/src/$(PACKAGE) -w /usr/local/go/src/$(PACKAGE) golang:1.22
-DOCKER=docker compose -f ./docker/docker-compose.yaml
+DOCKER=docker compose -f ./docker/docker-compose.yaml -p tgquotebot
 
 build: clean
 	@$(BUILDER) go build -o ./docker/images/app/build/app ./
